@@ -2,21 +2,37 @@
 
 body {
     font-family: "DM Sans", sans-serif;
-    margin: 0;
+    max-width: 1440px;
+	margin: 0 auto;
 }
-
 
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: fit-content;
+    margin-top: 44px;
 }
 
 h1 {
     color: #901C1C;
+    margin: unset;
     margin-right: 100px;
+    height: fit-content;
+    font-weight: 400;
+    font-size: 36px;
+}
+
+h2 {
+    margin-bottom: 2.5px;
+    color: #D3573C;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+p {
+    margin: 0;
 }
 
 .logo {
@@ -47,4 +63,23 @@ h1 {
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.pLocation {
+    font-size: 13px;
+    color: #901C1C;
+    font-weight: 400;
+}
+
+.pTagline {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.pPrice {
+    font-size: 9px;
+    color: #757575;
+    font-weight: 400;
 }
