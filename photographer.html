@@ -6,34 +6,89 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="scripts/services/getApi.js" defer></script>
+    <script src="/scripts/utils/contactForm.js" defer></script>
+    <script src="/scripts/utils/lightBox.js" defer></script>
+    <script src="/scripts/utils/likes.js" defer></script>
+    <script src="scripts/factories/media.js" defer></script>
+    <script src="scripts/pages/photographer.js" defer></script>
+    <script src="scripts/utils/sorter.js" defer></script>
     <title>Fisheye - photographe </title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
+  <body id="body">
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="/index.html" tabindex="1">
+        <img src="assets/images/logo.png" class="logo" />
+      </a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div class="photograph-header-name"></div>
+        <button class="contact_button" onclick="displayModal()" tabindex="2">Contactez-moi</button>
+      </div>
+      <div class="filter">
+        <label for="filter" class="filter_label">Trier par</label>
+        <select class="filter_select" name="filter" id="filter"  tabindex="3">
+          <option value="fame">Popularité</option>
+          <option value="date">Date</option>
+          <option value="title">Titre</option>
+      </select>
+      </div>
+      <div class="media_section">
+        
       </div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
-				<header>
+				<header class="modal-header">
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form action="/index.html">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label aria-labelledby="firstname">Prénom</label>
+						<input type="text" id="firstname">
+						<label aria-labelledby="name">Nom</label>
+						<input type="text" id="name">
+						<label aria-labelledby="mail">Email</label>
+						<input type="text" id="mail">
+						<label aria-labelledby="message">Votre message</label>
+						<input type="text" id="message">
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button_submit">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
-    <script src="scripts/factories/Photographer.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
+    <div class="lightBox" id="lightBox">
+      <div class="lightBox-frame">
+        <img onclick="lightBoxPrevious()" class="lightBox-arrow" src="assets/icons/arrow.svg" />
+      </div>
+      <div class="lightBox-frame__main">
+        <img class="lightBox-image lightBox-image__img" src="">
+        <video autoplay controls class="lightBox-image lightBox-image__video" src=""></video>
+        <span class="lightBox-title">Titre de l'image</span>
+      </div>
+      <div class="lightBox-frame">
+        <img class="closeLightBox" src="assets/icons/closeB.svg" onclick="closeLightBox()" />
+        <img onclick="lightBoxNext()" class="lightBox-arrow" src="assets/icons/arrow.svg" />
+        <span></span>
+      </div>
+    </div>
+    <div class="totalLikesFrame">
+      <p>
+        <span class="totalLikes">0</span>
+        <i class="fas fa-heart likes_heart"></i>
+      </p>
+      <p>
+        <span class="dayCost">0</span>
+        <span>€/jour</span>
+      </p>
+    </div>
   </body>
 </html>
