@@ -13,6 +13,7 @@
     <script src="scripts/factories/media.js" defer></script>
     <script src="scripts/pages/photographer.js" defer></script>
     <script src="scripts/utils/sorter.js" defer></script>
+    <script src="scripts/utils/selectHelper.js" defer></script>
     <title>Fisheye - photographe </title>
     <link
       rel="stylesheet"
@@ -23,18 +24,18 @@
   </head>
   <body id="body">
     <header>
-      <a href="/index.html" tabindex="1">
+      <a href="/index.html" tabindex="1" class="logoFrame selectHelper">
         <img src="assets/images/logo.png" class="logo" />
       </a>
     </header>
     <main id="main">
       <div class="photograph-header">
         <div class="photograph-header-name"></div>
-        <button class="contact_button" onclick="displayModal()" tabindex="2">Contactez-moi</button>
+        <button class="contact_button selectHelper" onclick="displayModal()" tabindex="2">Contactez-moi</button>
       </div>
       <div class="filter">
         <label for="filter" class="filter_label">Trier par</label>
-        <select class="filter_select" name="filter" id="filter"  tabindex="3">
+        <select class="filter_select selectHelper" name="filter" id="filter"  tabindex="3">
           <option value="fame">Popularité</option>
           <option value="date">Date</option>
           <option value="title">Titre</option>
@@ -53,15 +54,15 @@
 				<form action="/index.html">
 					<div>
 						<label aria-labelledby="firstname">Prénom</label>
-						<input type="text" id="firstname">
+						<input type="text" id="firstname" class="selectHelper">
 						<label aria-labelledby="name">Nom</label>
-						<input type="text" id="name">
+						<input type="text" id="name" class="selectHelper">
 						<label aria-labelledby="mail">Email</label>
-						<input type="text" id="mail">
+						<input type="text" id="mail" class="selectHelper">
 						<label aria-labelledby="message">Votre message</label>
-						<input type="text" id="message">
+						<input type="text" id="message" class="selectHelper">
 					</div>
-          <button class="contact_button_submit">Envoyer</button>
+          <button class="contact_button_submit selectHelper">Envoyer</button>
 				</form>
 			</div>
 		</div>

@@ -6,6 +6,12 @@ body {
 	margin: 0 auto;
 }
 
+.useSelectHelper:focus {
+    outline-width: 4px;
+    outline-color: white;
+    box-shadow: 0 0 1px 6px black;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -35,9 +41,12 @@ p {
     margin: 0;
 }
 
+.logoFrame {
+    margin-left: 100px;
+}
+
 .logo {
     height: 50px;
-    margin-left: 100px;
 }
 
 .photographer_section {

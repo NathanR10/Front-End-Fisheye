@@ -20,7 +20,7 @@ function mediaFactory(data, name, index) {
             frame_image.setAttribute("src", target);
             frame_image.setAttribute("titleorder", title);
             frame_image.setAttribute("dateorder", date);
-            frame_image.setAttribute("class", "frame_image");
+            frame_image.setAttribute("class", "frame_image selectHelper");
             frame_image.setAttribute("alt", title);
             frame_image.setAttribute("tabindex", index);
             frame_title.setAttribute("class", "frame_title");
@@ -28,7 +28,7 @@ function mediaFactory(data, name, index) {
             frame_like.setAttribute("class", "frame_like");
             frame_count.setAttribute("class", "frame_count");
             frame_count.setAttribute("id", `count_${id}`)
-            frame_heart.setAttribute("class", "far fa-heart frame_heart");
+            frame_heart.setAttribute("class", "far fa-heart frame_heart selectHelper");
             frame_heart.setAttribute("id", `like_${id}`);
             frame_heart.setAttribute("onclick", `likes(${id}, ${likes})`);
             frame_heart.ariaLabel = "Appuyez sur la touche entrée pour ajouter ou retirer votre j'aime";
@@ -65,7 +65,7 @@ function mediaFactory(data, name, index) {
             frame_video.setAttribute("src", target);
             frame_video.setAttribute("titleorder", title);
             frame_video.setAttribute("dateorder", date);
-            frame_video.setAttribute("class", "frame_image");
+            frame_video.setAttribute("class", "frame_image selectHelper");
             frame_video.setAttribute("type", "video/mp4");
             frame_video.setAttribute("title", title);
             frame_video.setAttribute("tabindex", index);
@@ -74,7 +74,7 @@ function mediaFactory(data, name, index) {
             frame_like.setAttribute("class", "frame_like");
             frame_count.setAttribute("class", "frame_count");
             frame_count.setAttribute("id", `count_${id}`)
-            frame_heart.setAttribute("class", "far fa-heart frame_heart");
+            frame_heart.setAttribute("class", "far fa-heart frame_heart selectHelper");
             frame_heart.setAttribute("id", `like_${id}`)
             frame_heart.setAttribute("onclick", `likes(${id}, ${likes})`);
             frame_heart.ariaLabel = "Appuyez sur la touche entrée pour ajouter ou retirer votre j'aime";

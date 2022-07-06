@@ -21,6 +21,9 @@ radio.addEventListener('input', function (evt) {
                     let likes = elm.childNodes[1].childNodes[1].childNodes[0].innerHTML;
                     parseInt(likes) === sortItems1[i] && (elm.style.order = i);
                     parseInt(likes) === sortItems1[i] && (elm.childNodes[0].setAttribute("tabindex", i+4));
+                    parseInt(likes) === sortItems1[i] && (
+                        elm.childNodes[0].parentNode.childNodes[1].childNodes[1].childNodes[1].setAttribute("tabindex", i+4)
+                    );
                 });
             });
             break;
@@ -36,6 +39,9 @@ radio.addEventListener('input', function (evt) {
                 items.forEach(elm => {
                     elm.childNodes[0].getAttribute('dateorder') === sortItems2[i] && (elm.style.order = i);
                     elm.childNodes[0].getAttribute('dateorder') === sortItems2[i] && (elm.childNodes[0].setAttribute("tabindex", i+4));
+                    elm.childNodes[0].getAttribute('dateorder') === sortItems2[i] && (
+                        elm.childNodes[0].parentNode.childNodes[1].childNodes[1].childNodes[1].setAttribute("tabindex", i+4)
+                    );
                 });
             });
             break;
@@ -49,6 +55,9 @@ radio.addEventListener('input', function (evt) {
                 items.forEach(elm => {
                     elm.childNodes[0].getAttribute('titleorder') === sortItems3[i] && (elm.style.order = i);
                     elm.childNodes[0].getAttribute('titleorder') === sortItems3[i] && (elm.childNodes[0].setAttribute("tabindex", i+4));
+                    elm.childNodes[0].getAttribute('titleorder') === sortItems3[i] && (
+                        elm.childNodes[0].parentNode.childNodes[1].childNodes[1].childNodes[1].setAttribute("tabindex", i+4)
+                    );
                 });
             });
             break;
