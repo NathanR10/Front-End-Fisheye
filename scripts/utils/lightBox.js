@@ -87,7 +87,7 @@ function closeLightBox() {
 }
 
 // Fermer la lightbox avec la touche echap
-window.onkeydown = function( event ) {
+window.onkeyup = function( event ) {
     if ( event.keyCode == 27 ) {
         closeLightBox();
     }
