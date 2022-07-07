@@ -15,8 +15,10 @@ function photographerFactory(data) {
         const pPrice = document.createElement( 'p' );
 
         link.setAttribute("href", `./photographer.html?${id}`)
+        link.setAttribute("class", 'selectHelper')
         frame.setAttribute("class", "frame")
         img.setAttribute("src", picture)
+        img.setAttribute("alt", name)
         pLocation.setAttribute("class", "pLocation")
         pTagline.setAttribute("class", "pTagline")
         pPrice.setAttribute("class", "pPrice")

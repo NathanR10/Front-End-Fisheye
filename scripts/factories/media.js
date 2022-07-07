@@ -16,7 +16,7 @@ function mediaFactory(data, name, index) {
     
             frame.setAttribute("class", "mediaFrame");
             frame_image.setAttribute("onclick", `displayLightBox('${image}')`);
-            frame_image.ariaLabel = "Aperçu de l'image, appuyez sur la touche entrée pour l'afficher en plein écran";
+            frame_image.ariaLabel = "Image: " + title;
             frame_image.setAttribute("src", target);
             frame_image.setAttribute("titleorder", title);
             frame_image.setAttribute("dateorder", date);
@@ -31,7 +31,7 @@ function mediaFactory(data, name, index) {
             frame_heart.setAttribute("class", "far fa-heart frame_heart selectHelper");
             frame_heart.setAttribute("id", `like_${id}`);
             frame_heart.setAttribute("onclick", `likes(${id}, ${likes})`);
-            frame_heart.ariaLabel = "Appuyez sur la touche entrée pour ajouter ou retirer votre j'aime";
+            frame_heart.ariaLabel = "Ajouter un j'aime à: " + title;
             frame_heart.setAttribute("tabindex", index);
     
             frame_label.textContent = title;
@@ -61,7 +61,7 @@ function mediaFactory(data, name, index) {
     
             frame.setAttribute("class", "mediaFrame");
             frame_video.setAttribute("onclick", `displayLightBox('${video}')`);
-            frame_video.ariaLabel = "Aperçu de la vidéo, appuyez sur la touche entrée pour l'afficher en plein écran";
+            frame_video.ariaLabel = "Video: " + title;
             frame_video.setAttribute("src", target);
             frame_video.setAttribute("titleorder", title);
             frame_video.setAttribute("dateorder", date);
@@ -77,7 +77,7 @@ function mediaFactory(data, name, index) {
             frame_heart.setAttribute("class", "far fa-heart frame_heart selectHelper");
             frame_heart.setAttribute("id", `like_${id}`)
             frame_heart.setAttribute("onclick", `likes(${id}, ${likes})`);
-            frame_heart.ariaLabel = "Appuyez sur la touche entrée pour ajouter ou retirer votre j'aime";
+            frame_heart.ariaLabel = "Ajouter un j'aime à: " + title;
             frame_heart.setAttribute("tabindex", index);
     
             frame_label.textContent = title;

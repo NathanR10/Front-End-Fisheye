@@ -6,6 +6,7 @@ function displayModal() {
 	main.style.filter = "blur(3px)";
 	body.style.overflow = "hidden";
 	main.style.pointerEvents = "none";
+    document.getElementById('firstname').focus();
 }
 
 function closeModal() {

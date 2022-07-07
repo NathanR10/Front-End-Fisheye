@@ -63,12 +63,13 @@ function setupTotalLikes(price, medias) {
     targetTotalLikes.innerHTML = getTotalLikes;
 }
 
-function createPicture(portrait) {
+function createPicture(portrait, name) {
     // Génère la photo de profil
     const targetElm = document.querySelector('.photograph-header');
     const img = document.createElement( 'img' );
     img.setAttribute("class", "profilPicture")
     img.setAttribute("src", "assets/photographers/" + portrait)
+    img.setAttribute("alt", name)
     // place la photo à la dernière position dans targetElm
     return targetElm.appendChild(img);
 }
@@ -94,7 +95,7 @@ async function init() {
     // send mediaData and photographer name for path (media.js)
     displayData(mediaData, photographerData.name);
     createTitle(photographerData.name, photographerData.city, photographerData.country, photographerData.tagline);
-    createPicture(photographerData.portrait);
+    createPicture(photographerData.portrait, photographerData.name);
     createModalName(photographerData.name);
     setupTotalLikes(photographerData.price, mediaData);
 };
