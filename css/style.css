@@ -45,6 +45,10 @@ p {
     margin-left: 100px;
 }
 
+.logoFrame--home {
+    margin-left: 120px;
+}
+
 .logo {
     height: 50px;
 }

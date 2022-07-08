@@ -51,16 +51,16 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer le formulaire" />
         </header>
-				<form action="/index.html">
+				<form id="contactForm" action="/index.html">
 					<div>
-						<label aria-labelledby="firstname">Prénom</label>
-						<input aria-label="Prénom" type="text" id="firstname" class="selectHelper">
-						<label aria-labelledby="name">Nom</label>
-						<input aria-label="Nom" type="text" id="name" class="selectHelper">
-						<label aria-labelledby="mail">Email</label>
-						<input aria-label="Mail" type="text" id="mail" class="selectHelper">
-						<label aria-labelledby="message">Votre message</label>
-						<input aria-label="Message" type="text" id="message" class="selectHelper">
+						<label aria-labelledby="firstname" for="firstname">Prénom</label>
+						<input aria-label="Prénom" type="text" id="firstname" class="selectHelper" name="firstname">
+						<label aria-labelledby="name" for="name">Nom</label>
+						<input aria-label="Nom" type="text" id="name" class="selectHelper" name="name">
+						<label aria-labelledby="mail" for="mail">Email</label>
+						<input aria-label="Mail" type="email" id="mail" class="selectHelper" name="mail">
+						<label aria-labelledby="message" for="message">Votre message</label>
+						<input aria-label="Message" type="text" id="message" class="selectHelper" name="message">
 					</div>
           <button class="contact_button_submit selectHelper">Envoyer</button>
 				</form>
@@ -84,7 +84,7 @@
     <div class="totalLikesFrame">
       <p>
         <span class="totalLikes">0</span>
-        <i class="fas fa-heart likes_heart"></i>
+        <em class="fas fa-heart likes_heart"></em>
       </p>
       <p>
         <span class="dayCost">0</span>
