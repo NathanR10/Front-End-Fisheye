@@ -1,104 +1,105 @@
-function mediaFactory(data, name, index) {
-  const { id, photographerId, title, image, video, likes, date, price } = data;
-  const photographerName = name.split(" ")[0].replace("-", " ");
+// eslint-disable-next-line no-unused-vars
+function mediaFactory (data, name, index) {
+  const { id, title, image, video, likes, date /* photographerId, price */ } = data
+  const photographerName = name.split(' ')[0].replace('-', ' ')
 
-  //test if media is an image or a video
-  if (typeof image !== "undefined") {
-    const target = `./assets/Sample Photos/${photographerName}/${image}`;
-    function getUserCardDOM() {
-      const frame = document.createElement("div");
-      const frame_image = document.createElement("img");
-      const frame_title = document.createElement("div");
-      const frame_label = document.createElement("p");
-      const frame_like = document.createElement("div");
-      const frame_count = document.createElement("span");
-      const frame_heart = document.createElement("i");
+  // test if media is an image or a video
+  if (typeof image !== 'undefined') {
+    const target = `./assets/Sample Photos/${photographerName}/${image}`
+    function getUserCardDOM () {
+      const frame = document.createElement('div')
+      const frameImage = document.createElement('img')
+      const frameTitle = document.createElement('div')
+      const frameLabel = document.createElement('p')
+      const frameLike = document.createElement('div')
+      const frameCount = document.createElement('span')
+      const frameHeart = document.createElement('i')
 
-      frame.setAttribute("class", "mediaFrame");
-      frame_image.setAttribute("onclick", `displayLightBox('${image}')`);
-      frame_image.ariaLabel = "Image: " + title;
-      frame_image.setAttribute("src", target);
-      frame_image.setAttribute("titleorder", title);
-      frame_image.setAttribute("dateorder", date);
-      frame_image.setAttribute("class", "frame_image selectHelper");
-      frame_image.setAttribute("alt", title);
-      frame_image.setAttribute("tabindex", index);
-      frame_title.setAttribute("class", "frame_title");
-      frame_label.setAttribute("class", "frame_label");
-      frame_like.setAttribute("class", "frame_like");
-      frame_count.setAttribute("class", "frame_count");
-      frame_count.setAttribute("id", `count_${id}`);
-      frame_heart.setAttribute(
-        "class",
-        "far fa-heart frame_heart selectHelper"
-      );
-      frame_heart.setAttribute("id", `like_${id}`);
-      frame_heart.setAttribute("onclick", `likes(${id}, ${likes})`);
-      frame_heart.ariaLabel = "Ajouter un j'aime à: " + title;
-      frame_heart.setAttribute("tabindex", index);
+      frame.setAttribute('class', 'mediaFrame')
+      frameImage.setAttribute('onclick', `displayLightBox('${image}')`)
+      frameImage.ariaLabel = 'Image: ' + title
+      frameImage.setAttribute('src', target)
+      frameImage.setAttribute('titleorder', title)
+      frameImage.setAttribute('dateorder', date)
+      frameImage.setAttribute('class', 'frame_image selectHelper')
+      frameImage.setAttribute('alt', title)
+      frameImage.setAttribute('tabindex', index)
+      frameTitle.setAttribute('class', 'frame_title')
+      frameLabel.setAttribute('class', 'frame_label')
+      frameLike.setAttribute('class', 'frame_like')
+      frameCount.setAttribute('class', 'frame_count')
+      frameCount.setAttribute('id', `count_${id}`)
+      frameHeart.setAttribute(
+        'class',
+        'far fa-heart frame_heart selectHelper'
+      )
+      frameHeart.setAttribute('id', `like_${id}`)
+      frameHeart.setAttribute('onclick', `likes(${id}, ${likes})`)
+      frameHeart.ariaLabel = "Ajouter un j'aime à: " + title
+      frameHeart.setAttribute('tabindex', index)
 
-      frame_label.textContent = title;
-      frame_count.textContent = likes;
+      frameLabel.textContent = title
+      frameCount.textContent = likes
 
-      frame.appendChild(frame_image);
-      frame.appendChild(frame_title);
-      frame_title.appendChild(frame_label);
-      frame_title.appendChild(frame_like);
-      frame_like.appendChild(frame_count);
-      frame_like.appendChild(frame_heart);
+      frame.appendChild(frameImage)
+      frame.appendChild(frameTitle)
+      frameTitle.appendChild(frameLabel)
+      frameTitle.appendChild(frameLike)
+      frameLike.appendChild(frameCount)
+      frameLike.appendChild(frameHeart)
 
-      frame.style.order = index;
-      return frame;
+      frame.style.order = index
+      return frame
     }
-    return { title, image, getUserCardDOM };
+    return { title, image, getUserCardDOM }
   } else {
-    const target = `./assets/Sample Photos/${photographerName}/${video}`;
-    function getUserCardDOM() {
-      const frame = document.createElement("div");
-      const frame_video = document.createElement("video");
-      const frame_title = document.createElement("div");
-      const frame_label = document.createElement("p");
-      const frame_like = document.createElement("div");
-      const frame_count = document.createElement("span");
-      const frame_heart = document.createElement("span");
+    const target = `./assets/Sample Photos/${photographerName}/${video}`
+    function getUserCardDOM () {
+      const frame = document.createElement('div')
+      const frameVideo = document.createElement('video')
+      const frameTitle = document.createElement('div')
+      const frameLabel = document.createElement('p')
+      const frameLike = document.createElement('div')
+      const frameCount = document.createElement('span')
+      const frameHeart = document.createElement('span')
 
-      frame.setAttribute("class", "mediaFrame");
-      frame_video.setAttribute("onclick", `displayLightBox('${video}')`);
-      frame_video.ariaLabel = "Video: " + title;
-      frame_video.setAttribute("src", target);
-      frame_video.setAttribute("titleorder", title);
-      frame_video.setAttribute("dateorder", date);
-      frame_video.setAttribute("class", "frame_image selectHelper");
-      frame_video.setAttribute("type", "video/mp4");
-      frame_video.setAttribute("title", title);
-      frame_video.setAttribute("tabindex", index);
-      frame_title.setAttribute("class", "frame_title");
-      frame_label.setAttribute("class", "frame_label");
-      frame_like.setAttribute("class", "frame_like");
-      frame_count.setAttribute("class", "frame_count");
-      frame_count.setAttribute("id", `count_${id}`);
-      frame_heart.setAttribute(
-        "class",
-        "far fa-heart frame_heart selectHelper"
-      );
-      frame_heart.setAttribute("id", `like_${id}`);
-      frame_heart.setAttribute("onclick", `likes(${id}, ${likes})`);
-      frame_heart.ariaLabel = "Ajouter un j'aime à: " + title;
-      frame_heart.setAttribute("tabindex", index);
+      frame.setAttribute('class', 'mediaFrame')
+      frameVideo.setAttribute('onclick', `displayLightBox('${video}')`)
+      frameVideo.ariaLabel = 'Video: ' + title
+      frameVideo.setAttribute('src', target)
+      frameVideo.setAttribute('titleorder', title)
+      frameVideo.setAttribute('dateorder', date)
+      frameVideo.setAttribute('class', 'frame_image selectHelper')
+      frameVideo.setAttribute('type', 'video/mp4')
+      frameVideo.setAttribute('title', title)
+      frameVideo.setAttribute('tabindex', index)
+      frameTitle.setAttribute('class', 'frame_title')
+      frameLabel.setAttribute('class', 'frame_label')
+      frameLike.setAttribute('class', 'frame_like')
+      frameCount.setAttribute('class', 'frame_count')
+      frameCount.setAttribute('id', `count_${id}`)
+      frameHeart.setAttribute(
+        'class',
+        'far fa-heart frame_heart selectHelper'
+      )
+      frameHeart.setAttribute('id', `like_${id}`)
+      frameHeart.setAttribute('onclick', `likes(${id}, ${likes})`)
+      frameHeart.ariaLabel = "Ajouter un j'aime à: " + title
+      frameHeart.setAttribute('tabindex', index)
 
-      frame_label.textContent = title;
-      frame_count.textContent = likes;
+      frameLabel.textContent = title
+      frameCount.textContent = likes
 
-      frame.appendChild(frame_video);
-      frame.appendChild(frame_title);
-      frame_title.appendChild(frame_label);
-      frame_title.appendChild(frame_like);
-      frame_like.appendChild(frame_count);
-      frame_like.appendChild(frame_heart);
+      frame.appendChild(frameVideo)
+      frame.appendChild(frameTitle)
+      frameTitle.appendChild(frameLabel)
+      frameTitle.appendChild(frameLike)
+      frameLike.appendChild(frameCount)
+      frameLike.appendChild(frameHeart)
 
-      frame.style.order = index;
-      return frame;
+      frame.style.order = index
+      return frame
     }
-    return { title, video, getUserCardDOM };
+    return { title, video, getUserCardDOM }
   }
 }
